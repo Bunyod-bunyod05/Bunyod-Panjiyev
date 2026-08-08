@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- Palette: cream paper + navy ink + burgundy accent + warm gold ---- */
+  --color-cream: #EFE8D8;
+  --color-paper: #F5F0E3;
+  --color-paper-2: #FDFAF3;
+
+  --color-ink: #1A2340;
+  --color-ink-2: #2A3255;
+  --color-ink-muted: #55617D;
+  --color-ink-soft: #7A8399;
+  --color-ink-line: #D6CFBE;
+
+  --color-burgundy: #5C2028;
+  --color-burgundy-dark: #401419;
+  --color-burgundy-line: #7A2E38;
+  --color-burgundy-soft: #E8D5D6;
+
+  --color-gold: #9F7A3A;
+  --color-gold-bright: #C8A46B;
+  --color-gold-line: #C4A97A;
+
+  /* ---- Type ---- */
+  --font-display: "Cormorant Garamond", ui-serif, Georgia, "Times New Roman", serif;
+  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: "Newsreader", ui-serif, Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+::selection {
+  background-color: var(--color-gold);
+  color: var(--color-paper-2);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Hairline rule used as a section divider — thin gold line with dots at ends */
+.hairline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.hairline::before,
+.hairline::after {
+  content: "";
+  display: block;
+  width: 44px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.5;
+}
+
+.reveal {
+  opacity: 0;
+}
+.reveal.is-visible {
+  animation: var(--animate-fade-up);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1 !important; animation: none !important; }
+  * { transition-duration: 0.01ms !important; }
+}
