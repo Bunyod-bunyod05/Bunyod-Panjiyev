@@ -20,6 +20,7 @@ import "@fontsource/ibm-plex-mono/500.css";
 
 import "./globals.css";
 import { LanguageProvider } from "@/lib/i18n";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Bunyod Panjiyev — Lawyer · LegalTech · AI",
@@ -34,6 +35,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased">
         <LanguageProvider>{children}</LanguageProvider>
+        <Analytics />
       </body>
     </html>
   );
