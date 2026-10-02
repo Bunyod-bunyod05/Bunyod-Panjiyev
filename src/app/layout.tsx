@@ -22,9 +22,9 @@ import "./globals.css";
 import { LanguageProvider } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Bunyod Panjiyev — Lawyer · AI Consultant · LegalTech",
+  title: "Bunyod Panjiyev — Lawyer · LegalTech · AI",
   description:
-    "Portfolio of Bunyod Panjiyev — AI consultant building multi-agent legal AI systems. Featured case: Legal AI Consultant, a multi-agent analyst for the Civil Code and Civil Procedure Code of Uzbekistan.",
+    "Portfolio of Bunyod Panjiyev — law student building source-grounded legal AI systems. Featured project: Legal Multi-Agent, a multi-agent legal analyst for the Civil Code of Uzbekistan.",
 };
 
 export default function RootLayout({

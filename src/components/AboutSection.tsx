@@ -4,6 +4,7 @@ import Image from "next/image";
 import { site } from "@/lib/data";
 import { useT } from "@/lib/i18n";
 import Reveal from "./Reveal";
+import CVButtons from "./CVButtons";
 
 export default function AboutSection() {
   const { t } = useT();
@@ -48,8 +49,12 @@ export default function AboutSection() {
           </Reveal>
           <Reveal delay={100}>
             <div className="mt-8 space-y-5 text-base leading-relaxed text-ink-muted md:text-lg">
-              <p>{t.about.body1}</p>
-              <p>{t.about.body2}</p>
+              {t.about.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+            <div className="mt-8">
+              <CVButtons />
             </div>
           </Reveal>
 

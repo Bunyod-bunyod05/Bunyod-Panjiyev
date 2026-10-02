@@ -26,18 +26,18 @@ export default function PracticeAreas() {
           </div>
         </Reveal>
 
-        <div className="mt-16 grid gap-px overflow-hidden border-t border-burgundy-line sm:grid-cols-2">
+        <div className="mt-16 grid gap-px overflow-hidden border-t border-burgundy-line md:grid-cols-3">
           {t.practice.items.map((item, i) => (
             <Reveal
               key={item.title}
               delay={i * 90}
               className="group relative border-b border-burgundy-line px-2 py-8 sm:px-8"
             >
-              {/* Right border on odd items (for the vertical divider) */}
+              {/* Vertical divider between columns (not after the last item) */}
               <div
                 aria-hidden="true"
                 className={`absolute top-0 bottom-0 right-0 w-px bg-burgundy-line ${
-                  i % 2 === 0 ? "hidden sm:block" : "hidden"
+                  i < t.practice.items.length - 1 ? "hidden md:block" : "hidden"
                 }`}
               />
               <div className="flex items-start gap-5">

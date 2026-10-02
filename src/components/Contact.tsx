@@ -3,8 +3,9 @@
 import { Mail, MessageCircle, Phone, MapPin } from "lucide-react";
 import { site } from "@/lib/data";
 import { useT } from "@/lib/i18n";
-import { GithubIcon } from "./BrandIcons";
+import { GithubIcon, InstagramIcon, LinkedinIcon } from "./BrandIcons";
 import Reveal from "./Reveal";
+import CVButtons from "./CVButtons";
 
 export default function Contact() {
   const { t } = useT();
@@ -41,6 +42,18 @@ export default function Contact() {
       href: site.github,
     },
     {
+      icon: LinkedinIcon,
+      label: t.contact.labels.linkedin,
+      value: site.linkedinName,
+      href: site.linkedinHref,
+    },
+    {
+      icon: InstagramIcon,
+      label: t.contact.labels.instagram,
+      value: site.instagramHandle,
+      href: site.instagramHref,
+    },
+    {
       icon: MapPin,
       label: t.contact.labels.location,
       value: t.top.location,
@@ -62,6 +75,9 @@ export default function Contact() {
             <p className="mt-6 max-w-md text-base leading-relaxed text-paper/80">
               {t.contact.body}
             </p>
+            <div className="mt-8">
+              <CVButtons dark />
+            </div>
           </Reveal>
 
           <Reveal delay={100}>

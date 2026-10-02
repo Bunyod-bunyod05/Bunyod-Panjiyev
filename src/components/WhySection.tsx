@@ -28,6 +28,17 @@ export default function WhySection() {
                 {t.why.body1}
               </p>
               <p>{t.why.body2}</p>
+              <div>
+                <p className="font-semibold text-ink">{t.why.listLead}</p>
+                <ul className="mt-3 space-y-2">
+                  {t.why.points.map((point) => (
+                    <li key={point} className="flex gap-3">
+                      <span className="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-burgundy" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </Reveal>
         </div>

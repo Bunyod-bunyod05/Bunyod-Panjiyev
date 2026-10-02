@@ -16,7 +16,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         <Image
           src="/images/portrait.png"
-          alt="Bunyod Panjiyev, AI consultant and legal-tech engineer"
+          alt="Bunyod Panjiyev — lawyer, AI consultant & LegalTech developer"
           fill
           priority
           sizes="100vw"
@@ -66,7 +66,11 @@ export default function Hero() {
           — {t.hero.attribution}
         </p>
 
-        <p className="mt-8 max-w-xl text-base leading-relaxed text-paper/85 md:text-lg">
+        <p className="mt-10 max-w-2xl font-display text-2xl font-semibold leading-snug text-paper-2 md:text-3xl">
+          {t.hero.subheading}
+        </p>
+
+        <p className="mt-3 max-w-xl text-base leading-relaxed text-paper/85 md:text-lg">
           {t.hero.intro}
         </p>
       </div>
